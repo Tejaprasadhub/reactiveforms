@@ -12,6 +12,15 @@
     transition: transform .3s ease-in-out,margin .3s ease-in-out; 
 }
 
+.main-sidemenu h2{
+    color:#fff;
+}
+.main-sidemenu a{
+color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
 
 
 
