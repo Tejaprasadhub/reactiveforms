@@ -1,0 +1,101 @@
+
+    .sidebar-toggle{
+        float: left;
+        background-color:transparent;
+        background-image: none;
+        padding:13px 15px;
+        font-size: 19px;
+    }
+
+    .navbar{
+        padding:0px !important;
+        background: #fff !important;
+        box-shadow: 4px 0 20px 0 #ddd;
+    }
+    .logo{
+        height: 70px!important;
+        background: #016dad;
+        display: block;
+        float: left;
+        font-size: 20px;
+        text-align: center;
+        width: 250px;
+        padding: 0 15px;
+        font-weight: 300;
+        overflow: hidden;
+        box-sizing: border-box;
+       
+    }
+    .logo .logo-lg{
+        display: block;
+    }
+    .logo img{
+        width: 40%;
+        margin: 5px auto 20px;
+    }
+    .topbar-logo{
+        color:#fff !important;
+        border-bottom: 1px solid #016dad !important;
+        text-decoration: none !important;
+       
+    }
+    .topbar-logo b{
+        font-size: 18px;
+        color:blue;
+        margin-top: -20px!important;
+        display: block;
+        font-weight: 400;
+    }
+
+.dropdown-menu.show{
+    left:auto !important;
+}
+.form-inline-dropdown{
+    border-right: 2px solid blue !important;
+}
+.nav-logo{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 50px;
+}
+.nav-ctc-logo{
+    height: 60px !important;
+}
+.nav-school-logo{
+    left: 46%;
+    height: 65px !important;
+    position: absolute;
+    margin-top: -30px;
+    display: none;
+}
+.navbar {
+    border-bottom: 1px solid #d7cdcd;
+   
+}
+.navbar .navbar-brand{
+    width: 250px !important;
+    border-right: 1px solid black;
+    background: #016dad;
+    text-align: center;
+}
+.form-inline-dropdown a, .dropdown-menu a .fa{
+    color: black;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.navbar a:hover,.navbar .dropdown-item:hover,.navbar .dropdown-item .fa:hover{
+    color:red;
+}
+.dropdown-item:active,.dropdown-item:hover {
+    background-color: #dfe1e3;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-school-logo{
+        left: 46%;
+        height: 65px !important;
+        position: absolute;
+        margin-top: -60px !important;
+    }
+  }

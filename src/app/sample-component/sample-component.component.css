@@ -1,0 +1,8 @@
+.mat-form-field{
+    width: 100% !important;
+}
+
+
+.error {
+    caret-color: #f44336 !important;
+}

@@ -13,12 +13,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SampleComponentComponent } from './sample-component/sample-component.component';
+import { HeaderComponent } from './header/header.component';
+import { LeftNavComponent } from './left-nav/left-nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SampleComponentComponent,
+    HeaderComponent,
+    LeftNavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

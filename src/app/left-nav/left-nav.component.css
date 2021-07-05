@@ -1,0 +1,17 @@
+.main-sidemenu{
+    max-height: calc(100vh - 90px);
+    background: #016dad !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    padding-top: 70px;
+    min-height: 100%;
+    width: 250px;
+    z-index: 810;    
+    transition: transform .3s ease-in-out,margin .3s ease-in-out; 
+}
+
+
+
+

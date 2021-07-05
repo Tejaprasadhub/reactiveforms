@@ -1,4 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+/* main body styles starts from here */
+.content-wrapper {
+  padding: 10px;
+  background-color: #ecf0f5;
+  z-index: 8000;
+  min-height: calc(100vh - 125px);
+  margin-left: 250px;
+  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+.sidebar-collapse .main-sidemenu {
+  display: none !important;
+}
+/* Sidemenu styles ends here */
+@media (min-width: 320px) {
+  .sidebar-collapse .main-footer,
+  .sidebar-collapse .content-wrapper {
+    margin-left: 0;
+  }
+}
+
+.error-block {
+  background: #fff3f3;
+  color: #e32315;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 10px;
+  margin-top: 5px;
+}
+.success-block {
+  background: #c5ddc5;
+  color: green;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.error-block i,
+.success-block i {
+  font-size: 20px;
+  margin-right: 10px;
+  float: left;
+}
+
+.error-block .error-div {
+  font-weight: bold;
+  font-size: 12px;
+}
+.error-block .error-div i {
+  padding: 5px 0px;
+  font-size: 8px;
+}
