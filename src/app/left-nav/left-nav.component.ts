@@ -12,14 +12,14 @@ menu:any[]=[];
   ngOnInit(): void {
     this.menu = [
       {
-        displayName: 'Escritorio',
+        displayName: 'Home',
         iconName: 'desktop_windows',
-        route: 'escritorio',
+        route: 'home',
       },        
       {
-        displayName: 'Entradas GADE',
+        displayName: 'IAM',
         iconName: 'ballot',
-        route: 'entradasGADE',
+        route: 'iam',
       },
       {
         displayName: 'Expedientes',

@@ -21,6 +21,7 @@ import { LeftNavComponent } from './left-nav/left-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import { IamComponent } from './iam/iam.component';
 
 
 
@@ -30,7 +31,8 @@ import {MatListModule} from '@angular/material/list';
     SampleComponentComponent,
     HeaderComponent,
     LeftNavComponent,
-    FooterComponent
+    FooterComponent,
+    IamComponent
   ],
   imports: [
     BrowserModule,
