@@ -81,7 +81,7 @@
         </div>
   
         <div class="col-md-4">
-          <mat-form-field appearance="fill">
+          <mat-form-field  #mydiv appearance="fill">
             <mat-label>Choose User Type</mat-label>
             <mat-select  formControlName="usertype"
             [ngClass]="{'error':((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched) || (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">

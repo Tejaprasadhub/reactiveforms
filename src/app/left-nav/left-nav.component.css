@@ -1,3 +1,4 @@
+
 .main-sidemenu{
     max-height: calc(100vh - 90px);
     background: #016dad !important;
@@ -10,8 +11,24 @@
     width: 250px;
     z-index: 810;    
     transition: transform .3s ease-in-out,margin .3s ease-in-out; 
+    color: #fff;
+}
+.mat-drawer{
+    display: contents!important;
+    visibility:visible!important;
+}
+::ng-deep .mat-drawer-inner-container,.mat-expansion-panel{
+    background-color: #016dad !important;
+}
+::ng-deep .mat-expansion-panel-header-description,::ng-deep .mat-expansion-indicator::after {
+    color: #fff !important;
+}
+::ng-deep .mat-expansion-panel-header {
+    padding: 0px 15px !important;
 }
 
+
+/* 
 .main-sidemenu h2{
     color:#fff;
 }
@@ -19,7 +36,8 @@
 color: #fff;
     text-decoration: none;
     font-size: 15px;
-}
+} */
+
 
 
 

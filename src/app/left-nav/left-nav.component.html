@@ -1,10 +1,49 @@
 <div class="main-sidemenu">
-    <div class="row" style="padding: 20px 10px 10px 25px;">
+    <div class="row" style="padding: 19px 10px 0px 20px">
         <h2>IAM Main Menu</h2>
     </div>
-    <div class="row">
-        <div class="col-md-12 mb-2"><a href="#" class="p-4"><i class="fa fa-dashboard"></i> <span class="m-2">Dash Board</span></a></div>
-        <div class="col-md-12 mb-2"><a href="#" class="p-4"><i class="fa fa-credit-card"></i> <span class="m-2">IAM</span></a></div>
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #snav fixedTopGap="56" style="visibility: visible!important;">
+            <mat-nav-list>
+                <span *ngFor="let item of menu">
+                    <span *ngIf="item.children && item.children.length > 0">
+                        <mat-accordion>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title style="color: #fff!important;">
+                                        <!-- Cabeceras del submenu -->
+                                        <div fxLayout="row" class="d-flex" fxLayoutAlign="space-between center">
+                                            <mat-icon style="margin-right:5px">{{item.iconName}}</mat-icon>
+                                            <span>{{item.displayName}}</span>
 
-    </div>
+                                        </div>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <span *ngFor="let child of item.children">
+                                    <mat-list-item routerLink="[child.route]" style="color: #fff!important;">
+                                        <!-- Entradas de cada submenú  -->
+                                        <div fxLayout="row" class="d-flex" fxLayoutAlign="space-between center">
+                                            <mat-icon style="margin-right:5px">{{child.iconName}}</mat-icon>
+                                            <span>{{item.displayName}}</span>
+                                        </div>
+                                    </mat-list-item>
+                                </span>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </span>
+                    <span *ngIf="!item.children || item.children.length === 0">
+                        <mat-list-item routerLink="[item.route]" style="color: #fff!important;">
+                            <!-- Entradas principales -->
+                            <div fxLayout="row" class="d-flex" fxLayoutAlign="space-between center">
+                                <mat-icon style="margin-right:5px">{{item.iconName}}</mat-icon>
+                                <span>{{item.displayName}}</span>
+                            </div>
+                        </mat-list-item>
+                    </span>
+                </span>
+            </mat-nav-list>
+        </mat-sidenav>
+
+    </mat-sidenav-container>
+
 </div>
