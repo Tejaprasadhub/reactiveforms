@@ -26,14 +26,14 @@ menu:any[]=[];
         iconName: 'description',          
         children: [
           {
-            displayName: 'Mis Expedientes',
+            displayName: 'Sample1',
             iconName: 'how_to_reg',
-            route: '/misexpedientes'
+            route: 'sample1'
           },
           { 
-            displayName: 'Todos',
+            displayName: 'Sample2',
             iconName: 'waves',
-            route: '/todos'
+            route: 'sample2'
           }
         ]
       },
@@ -42,9 +42,9 @@ menu:any[]=[];
         iconName: 'group',
         children: [
             {
-              displayName: 'Búsqueda Perfil',
+              displayName: 'Sample3',
               iconName: 'search',
-              route: '/busquedaperfiles'
+              route: 'sample3'
             }
           ]
         }

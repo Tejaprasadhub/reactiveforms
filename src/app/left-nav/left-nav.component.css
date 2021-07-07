@@ -28,9 +28,14 @@
 }
 
 ::ng-deep .is-active {
-border-right: 3px solid yellow;
+border-left: 5px solid yellow;
 }
-
+::ng-deep .mat-list-item-content,::ng-deep .mat-expansion-panel{
+    border-bottom: 1px solid #fff;   
+}
+::ng-deep .panel-items .mat-list-item-content{
+    border-bottom:none;
+}
 
 /* 
 .main-sidemenu h2{

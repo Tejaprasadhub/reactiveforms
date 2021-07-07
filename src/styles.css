@@ -18,7 +18,9 @@ body {
   margin-left: 250px;
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
-
+.mat-form-field{
+    width: 100% !important;
+}
 
 .sidebar-collapse .main-sidemenu {
   display: none !important;

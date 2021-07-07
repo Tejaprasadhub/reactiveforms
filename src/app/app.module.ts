@@ -22,6 +22,13 @@ import { FooterComponent } from './footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import { IamComponent } from './iam/iam.component';
+import { Sample1Component } from './sample1/sample1.component';
+import { Sample2Component } from './sample2/sample2.component';
+import { Sample3Component } from './sample3/sample3.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SampleModalComponent } from './sample-modal/sample-modal.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -32,10 +39,15 @@ import { IamComponent } from './iam/iam.component';
     HeaderComponent,
     LeftNavComponent,
     FooterComponent,
-    IamComponent
+    IamComponent,
+    Sample1Component,
+    Sample2Component,
+    Sample3Component,
+    SampleModalComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -50,7 +62,8 @@ import { IamComponent } from './iam/iam.component';
     MatSidenavModule,
     MatIconModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

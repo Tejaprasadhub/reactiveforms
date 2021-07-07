@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, startWith } from 'rxjs/operators';
+import { SampleModalComponent } from '../sample-modal/sample-modal.component';
 @Component({
   selector: 'app-sample-component',
   templateUrl: './sample-component.component.html',
@@ -19,10 +21,12 @@ export class SampleComponentComponent implements OnInit {
  toppings = new FormControl();
  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
  filteredOptions!: Observable<string[]>;
+
+ animal: any;
  /**
   *
   */
- constructor(private fb: FormBuilder) {
+ constructor(private fb: FormBuilder,public dialog: MatDialog) {
 
  }
 
@@ -73,5 +77,18 @@ export class SampleComponentComponent implements OnInit {
      'userqualification': ["Mushroom","Onion"]
    })
  }
+
+ openDialog(): void {
+  const dialogRef = this.dialog.open(SampleModalComponent, {
+    // width: '250px',
+    data: {animal: this.animal}    
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    debugger
+    console.log('The dialog was closed');
+    this.animal = result;
+  });
+}
 
 }
