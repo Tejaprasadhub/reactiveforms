@@ -4,132 +4,35 @@
 .error {
     caret-color: #f44336 !important;
 }
-
-/* 
-#section1 {
-    text-align: center;
-    display: table;
-  }
-  
-  .section1 h1 {
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 60px;
-    line-height: 70px;
-    color: #fff;
-    text-align: justify;
-  }
-  #section2 h1 {
-    font-weight: bold;
-    font-size: 18px;
+.page-container-box {
+    background: #f8f9fa;
+    padding: 10px 10px 35px 10px;
     margin-top: 10px;
-  }
-  #section4 p {
-    font-size: 25px;
-    line-height: 30px;
-  }
-  #section5 h1 {
-    font-weight: bold;
+    border-top: 3px solid #351681;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.page-container-header {
+    background: #e1e1e1;
     font-size: 18px;
-    margin-top: 10px;
-  }
-  #section6 h1 {
-    color: #fff;
-    font-size: 30px;
-  }
-  #section8 h1 {
-    color: #fff;
-    font-size: 30px;
-  }
-  #section9 img{
-      width: 120px;
-      height: 70px;
-  }
-  .section1-bg {
-    background-color: #aa1b2b;
-  }
-  .section5-header {
-    font-size: 30px !important;
-    letter-spacing: 2px;
-  }
-  #section5 img {
-    width: 40% !important;
-    -webkit-transition: all 0.25s ease;
-    -o-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-  #section2 img {
-    width: 50% !important;
-    -webkit-transition: all 0.25s ease;
-    -o-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-  #section2 img:hover {
-      transform: scale(0.8);
-      cursor: pointer;
-    }
-  #section5 img:hover {
-    transform: scale(0.8);
-    cursor: pointer;
-  }
-  #section4 {
-    background-color: #e1e1e1;
-  }
-  .bg-white {
-    background-color: #fff;
-  }
-  .text-red {
-    color: #aa1b2b;
-  }
-  .text-white {
-    color: #fff;
-  }
-  .radius {
-    border-radius: 20px;
+    border-bottom: 1px solid #8a8888;
+    padding: 10px;
+    margin-top: 20px;
+}
+.sub-details-div {
+    font-size: 18px;
+    padding: 0px 25px;
+}
+
+.details-div label{
+    line-height: 25px;
+}
+.details-div span{
     font-weight: bold;
-  }
-  .signup-text {
-    font-size: 25px;
-    line-height: 30px;
-  }
-  
-  table tbody:hover {
-    transform: scale(1.06);
-  }
-  
-  table tbody {
-    box-shadow: 0 0 15px rgb(0 0 0 / 40%);
-    -webkit-transition: all 0.25s ease;
-    -o-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
+}
 
-  @media only screen and (max-width: 1180px) {
-    .section1 h1 {
-        font-size: 60px;
-    }
-  }
-  @media (min-width: 990px) and (max-width: 1180px) {
-    .section1 h1 {
-        font-size: 50px;
-    }  
-  }
 
-   @media only screen and (max-width: 990px) and (min-width: 768px) {
-    .section1 h1 {
-        font-size: 40px;
-    }  
-  }
-
-  @media only screen and (max-width: 768px) and (min-width: 200px) {
-    .section1 h1 {
-        font-size: 30px;
-    }
-   
-  } */
  
  
   

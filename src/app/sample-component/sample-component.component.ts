@@ -51,7 +51,7 @@ export class SampleComponentComponent implements OnInit {
      usertype: new FormControl('', { validators: [Validators.required] }),
      userdob: new FormControl('', { validators: [Validators.required] }),
      userautocomplete: new FormControl('', { validators: [Validators.required] }),
-     userqualification: new FormControl([], { validators: [Validators.required] })
+    //  userqualification: new FormControl([], { validators: [Validators.required] })
    });
  }
 
@@ -74,7 +74,7 @@ export class SampleComponentComponent implements OnInit {
      'usertype': "ADMN",
      'userdob':new Date("07/08/2018"),
      'userautocomplete': "Two",
-     'userqualification': ["Mushroom","Onion"]
+    //  'userqualification': ["Mushroom","Onion"]
    })
  }
 
