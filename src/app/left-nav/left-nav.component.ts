@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent implements OnInit {
-menu:any[]=[];
+  menu: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -15,22 +15,22 @@ menu:any[]=[];
         displayName: 'Home',
         iconName: 'desktop_windows',
         route: 'home',
-      },        
+      },
       {
         displayName: 'IAM',
         iconName: 'ballot',
         route: 'iam',
       },
       {
-        displayName: 'Expedientes',
-        iconName: 'description',          
+        displayName: 'Organization Chart',
+        iconName: 'description',
         children: [
           {
             displayName: 'Sample1',
             iconName: 'how_to_reg',
             route: 'sample1'
           },
-          { 
+          {
             displayName: 'Sample2',
             iconName: 'waves',
             route: 'sample2'
@@ -38,16 +38,89 @@ menu:any[]=[];
         ]
       },
       {
-        displayName: 'Perfiles',
+        displayName: 'Position Tracker',
         iconName: 'group',
         children: [
-            {
-              displayName: 'Sample3',
-              iconName: 'search',
-              route: 'sample3'
-            }
-          ]
-        }
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'Leaves',
+        iconName: 'desktop_windows',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'Emergency Planning',
+        iconName: 'group',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'Administation',
+        iconName: 'desktop_windows',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'IAM',
+        iconName: 'group',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'Seating Arrangement',
+        iconName: 'group',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+      {
+        displayName: 'Overtime Details',
+        iconName: 'group',
+        children: [
+          {
+            displayName: 'Sample3',
+            iconName: 'search',
+            route: 'sample3'
+          }
+        ]
+      },
+     
+       {
+        displayName: 'Tranig Manual',
+        iconName: 'ballot',
+        route: 'iam',
+      },
+
     ];
 
   }

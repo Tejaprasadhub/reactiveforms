@@ -26,10 +26,19 @@ import { Sample1Component } from './sample1/sample1.component';
 import { Sample2Component } from './sample2/sample2.component';
 import { Sample3Component } from './sample3/sample3.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { SampleModalComponent } from './sample-modal/sample-modal.component';
 import { FormsModule } from '@angular/forms';
+import { LoadingHttpInterceptorComponent, LoadingHttpInterceptorFactoryProvider } from './core/loading-http-interceptor/loading-http-interceptor.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerComponent } from './spinner/spinner.component';
 
-
+const LoadingHttpInterceptorProvider = {
+  provide: HTTP_INTERCEPTORS,
+  useExisting: LoadingHttpInterceptorComponent,
+  multi: true
+}
 
 
 @NgModule({
@@ -43,7 +52,9 @@ import { FormsModule } from '@angular/forms';
     Sample1Component,
     Sample2Component,
     Sample3Component,
-    SampleModalComponent
+    SampleModalComponent,
+    LoadingHttpInterceptorComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +74,11 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatExpansionModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
-  providers: [MatDatepickerModule],
+  providers: [MatDatepickerModule, LoadingHttpInterceptorProvider,
+    LoadingHttpInterceptorFactoryProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <div class="main-sidemenu">
     <div class="row" style="padding: 19px 10px 0px 20px">
-        <h2>IAM Main Menu</h2>
+        <span class="left-nav-title">IAM Main Menu</span>
     </div>
     <mat-sidenav-container class="example-sidenav-container">
         <mat-sidenav #snav fixedTopGap="56" style="visibility: visible!important;">
@@ -13,8 +13,8 @@
                                     <mat-panel-title style="color: #fff!important;">
                                         <!-- Cabeceras del submenu -->
                                         <div fxLayout="row" class="d-flex" fxLayoutAlign="space-between center">
-                                            <mat-icon style="margin-right:5px">{{item.iconName}}</mat-icon>
-                                            <span>{{item.displayName}}</span>
+                                            <mat-icon >{{item.iconName}}</mat-icon>
+                                            <span class="left-nav-text">{{item.displayName}}</span>
 
                                         </div>
                                     </mat-panel-title>
@@ -23,8 +23,8 @@
                                     <mat-list-item [routerLink]="child.route" class="panel-items" [routerLinkActive]="['is-active']" style="color: #fff!important;">
                                         <!-- Entradas de cada submenú  -->
                                         <div fxLayout="row" class="d-flex" style="font-size: 15px;" fxLayoutAlign="space-between center">
-                                            <mat-icon style="margin-right:5px;font-size: 19px;">{{child.iconName}}</mat-icon>
-                                            <span>{{item.displayName}}</span>
+                                            <mat-icon>{{child.iconName}}</mat-icon>
+                                            <span class="left-nav-text">{{item.displayName}}</span>
                                         </div>
                                     </mat-list-item>
                                 </span>
@@ -35,8 +35,8 @@
                         <mat-list-item [routerLink]="item.route" [routerLinkActive]="['is-active']" style="color: #fff!important;">
                             <!-- Entradas principales -->
                             <div fxLayout="row" class="d-flex" style="font-size: 15px;" fxLayoutAlign="space-between center">
-                                <mat-icon style="margin-right:5px;font-size: 19px;">{{item.iconName}}</mat-icon>
-                                <span>{{item.displayName}}</span>
+                                <mat-icon >{{item.iconName}}</mat-icon>
+                                <span class="left-nav-text">{{item.displayName}}</span>
                             </div>
                         </mat-list-item>
                     </span>

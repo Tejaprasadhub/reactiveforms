@@ -1,5 +1,214 @@
 <div class="content-wrapper">
     <div class="row">
+        <div class="col-md-9">
+            <span class="page-title"><i class="fa fa-user-plus"></i> IAM Add User</span>
+        </div>
+        <div class="col-md-3 breadcrumb-div">
+            <nav aria-label="breadcrumb" class="breadcrumb-div">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">IAM Add User</li>
+                </ol>
+              </nav>
+        </div>
+    </div>
+    <div class="col-md-12 page-container-box">
+        <div class="col-md-12 page-container-header">
+            <span><i class="fa fa-user-plus"></i> IAM Add User Screen</span>
+        </div>
+        <div class="col-md-12" style="padding:0px 15px">
+            <form [formGroup]="addUserForm" class="col-md-12" (ngSubmit)="addUserSubmit()">
+                <div class="col-md-12 error-block animated fadeIn" *ngIf="(!addUserForm.valid && formSubmitAttempt)">
+                    <div class="col-md-12">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <b>Please correct the following error(s):</b>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <div class="row" style="padding-left: 30px;">
+                                    <div class="col-md-3 error-div"
+                                        *ngIf="((!addUserForm.controls['username'].valid && addUserForm.controls['username'].touched)|| (!addUserForm.controls['username'].valid && addUserForm.controls['username'].untouched && formSubmitAttempt))">
+                                        <i class="fa fa-circle"></i>
+                                        <span *ngIf="(addUserForm.controls['username'].errors?.required)">Enter "User
+                                            Name"</span>
+    
+                                    </div>
+                                    <div class="col-md-3 error-div"
+                                        *ngIf="((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched)|| (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt))">
+                                        <i class="fa fa-circle"></i>
+                                        <span *ngIf="(addUserForm.controls['usertype'].errors?.required)">Enter "User Type
+                                            "</span>
+                                    </div>
+                                    <div class="col-md-3 error-div"
+                                        *ngIf="((!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].touched)|| (!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].untouched && formSubmitAttempt))">
+                                        <i class="fa fa-circle"></i>
+                                        <span *ngIf="(addUserForm.controls['userdob'].errors?.required)">Enter "Date of
+                                            Birth"</span>
+    
+                                    </div>
+    
+                                    <div class="col-md-3 error-div"
+                                        *ngIf="((!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].touched)|| (!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].untouched && formSubmitAttempt))">
+                                        <i class="fa fa-circle"></i>
+                                        <span *ngIf="(addUserForm.controls['userautocomplete'].errors?.required)">Enter
+                                            "Number
+                                            "</span>
+                                    </div>
+    
+                                    <div class="col-md-3 error-div"
+                                        *ngIf="((!addUserForm.controls['userqualification'].valid && addUserForm.controls['userqualification'].touched)|| (!addUserForm.controls['userqualification'].valid && addUserForm.controls['userqualification'].untouched && formSubmitAttempt))">
+                                        <i class="fa fa-circle"></i>
+                                        <span *ngIf="(addUserForm.controls['userqualification'].errors?.required)">Enter
+                                            "Qualification"</span>
+                                    </div>
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Enter User Name</mat-label>
+                            <input type="text" matInput placeholder="User Name" formControlName="username"
+                                [ngClass]="{'error':((!addUserForm.controls['username'].valid && addUserForm.controls['username'].touched) || (!addUserForm.controls['username'].valid && addUserForm.controls['username'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3">
+                        <mat-form-field #mydiv appearance="fill">
+                            <mat-label>Choose User Type</mat-label>
+                            <mat-select formControlName="usertype"
+                                [ngClass]="{'error':((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched) || (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                                <mat-option value="ADMN">Admin</mat-option>
+                                <mat-option value="VNDR">Vendor</mat-option>
+                                <mat-option value="SVND">Sub Vendor</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="userdob"
+                                [ngClass]="{'error':((!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].touched) || (!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3">
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Number</mat-label>
+                            <input type="text" placeholder="Choose one value" matInput formControlName="userautocomplete"
+                                [matAutocomplete]="auto"
+                                [ngClass]="{'error':((!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].touched) || (!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-12" style="padding:0px 15px">
+                    <div class="col-md-12 page-container-header">
+                        <i aria-hidden="true" class="fa fa-address-card-o"></i> User Details:                 
+                    </div>
+                    <div class="row">
+                    <div class="col-md-3 mt-3" style="padding:0px 25px;">
+                        <label><span>1.First Name:</span><p>Teja Prasad</p></label>
+                    </div>
+                    <div class="col-md-3 mt-3" style="padding:0px 25px;">
+                        <label><span>2.Last Name:</span><p>Behara</p></label>
+                    </div>
+                    <div class="col-md-3 mt-3" style="padding:0px 25px;">
+                        <label><span>3.Network ID:</span><p>NET00001</p></label>
+                    </div>
+                    <div class="col-md-3 mt-3" style="padding:0px 25px;">
+                        <label><span>4.Email:</span><p>tejaprasadbehara@gmail.com</p></label>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-12 mt-3" style="padding:0px 15px">
+                    <div class="col-md-12 page-container-header">
+                        <i aria-hidden="true" class="fa fa-address-card-o"></i> Request Details:                   
+                    </div>
+                    <div class="row">
+                    <div class="col-md-3 mt-2" style="padding:0px 25px;">
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Enter User Name</mat-label>
+                            <input type="text" matInput placeholder="User Name" formControlName="username"
+                                [ngClass]="{'error':((!addUserForm.controls['username'].valid && addUserForm.controls['username'].touched) || (!addUserForm.controls['username'].valid && addUserForm.controls['username'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3 mt-2" style="padding:0px 25px;">
+                        <mat-form-field #mydiv appearance="fill">
+                            <mat-label>Choose User Type</mat-label>
+                            <mat-select formControlName="usertype"
+                                [ngClass]="{'error':((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched) || (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                                <mat-option value="ADMN">Admin</mat-option>
+                                <mat-option value="VNDR">Vendor</mat-option>
+                                <mat-option value="SVND">Sub Vendor</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3 mt-2" style="padding:0px 25px;">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="userdob"
+                                [ngClass]="{'error':((!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].touched) || (!addUserForm.controls['userdob'].valid && addUserForm.controls['userdob'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-3 mt-2" style="padding:0px 25px;">
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Number</mat-label>
+                            <input type="text" placeholder="Choose one value" matInput formControlName="userautocomplete"
+                                [matAutocomplete]="auto"
+                                [ngClass]="{'error':((!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].touched) || (!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+    
+                    <div class="col-md-12" style="text-align: right;">
+                        <button type="button" class="m-1" mat-raised-button color="primary" (click)="openDialog()">Open
+                            dialog</button>
+    
+                        <button type="submit" class="m-1" mat-raised-button color="primary">Submit</button>
+                        <button type="button" class="m-1" mat-raised-button color="primary" (click)="BindData()">Bind
+                            Data</button>
+                        <button type="reset" class="m-1" mat-raised-button color="primary" (click)="Reset()">Reset</button>
+                    </div>
+    
+                    <span *ngIf="animal">
+                        You chose: <i>{{ animal | json }}</i>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="content-wrapper">
+    <div class="row">
         <div class="col-md-12 text-center">
             <h1>Sample Form</h1>
         </div>
@@ -120,7 +329,7 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div class="row details-div">
+            <div class="row user-details-div">
                 <div class="col-md-12 sub-details-div">
                     <i aria-hidden="true" class="fa fa-address-card-o"></i> User Details:                 
                 </div>
@@ -137,7 +346,7 @@
                     <label><span>4.Email:</span><p>tejaprasadbehara@gmail.com</p></label>
                 </div>
             </div>
-            <div class="row details-div mt-3">
+            <div class="row user-details-div mt-3">
                 <div class="col-md-12 sub-details-div">
                     <i aria-hidden="true" class="fa fa-address-card-o"></i> Request Details:                   
                 </div>
@@ -186,17 +395,6 @@
                 </div>
 
 
-
-                <!-- <div class="col-md-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Qualifications</mat-label>
-                        <mat-select formControlName="userqualification" multiple
-                            [ngClass]="{'error':((!addUserForm.controls['userqualification'].valid && addUserForm.controls['userqualification'].touched) || (!addUserForm.controls['userqualification'].valid && addUserForm.controls['userqualification'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
-                            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div> -->
-                <!-- <div class="col-md-4"></div> -->
                 <div class="col-md-12" style="text-align: right;">
                     <button type="button" class="m-1" mat-raised-button color="primary" (click)="openDialog()">Open
                         dialog</button>
@@ -213,4 +411,4 @@
             </div>
         </form>
     </div>
-</div>
+</div> -->
