@@ -104,7 +104,7 @@
     
                     <div class="col-md-3">
                         <mat-form-field class="example-form-field" appearance="fill">
-                            <mat-label>Number</mat-label>
+                            <mat-label>Number1</mat-label>
                             <input type="text" placeholder="Choose one value" matInput formControlName="userautocomplete"
                                 [matAutocomplete]="auto"
                                 [ngClass]="{'error':((!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].touched) || (!addUserForm.controls['userautocomplete'].valid && addUserForm.controls['userautocomplete'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
@@ -171,7 +171,7 @@
                     </div>
     
                     <div class="col-md-3 mt-2" style="padding:0px 25px;">
-                        <mat-form-field class="example-form-field" appearance="fill">
+                        <!-- <mat-form-field class="example-form-field" appearance="fill">
                             <mat-label>Number</mat-label>
                             <input type="text" placeholder="Choose one value" matInput formControlName="userautocomplete"
                                 [matAutocomplete]="auto"
@@ -179,6 +179,18 @@
                             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
                                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                                     {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field> -->
+
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Number2</mat-label>
+                            <input type="text" placeholder="Choose one value" matInput formControlName="userautocomplete1"
+                                [matAutocomplete]="auto1"
+                                [ngClass]="{'error':((!addUserForm.controls['userautocomplete1'].valid && addUserForm.controls['userautocomplete1'].touched) || (!addUserForm.controls['userautocomplete1'].valid && addUserForm.controls['userautocomplete1'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                            <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+                                <mat-option *ngFor="let option1 of filteredOptions1 | async" [value]="option1">
+                                    {{option1}}
                                 </mat-option>
                             </mat-autocomplete>
                         </mat-form-field>
@@ -207,11 +219,14 @@
 
 
 
- <!-- <div class="container">
-    <div class="row  bg-white pb-3 pt-2 " id="section9">
-            <img class="img-fluid" src="../../assets/harish-images/Logo.png">      
+<!-- <div class="container">
+    <div class="row bg-dark-header pb-3 pt-2 " id="section9">
+        <div class="col-md-4 mt-2">
+            <img class="img-fluid" src="../../assets/harish-images/logo_cognition.png">
+        </div>
+        <div class="col-md-8"></div>
     </div>
-    <div class="row col-md-12 p-3 section1-bg">
+    <div class="row  p-3 section1-bg">
         <div class="col-md-7" id="section1">
             <h1>Buy any Quantity
                 and Get Wholesale
@@ -235,12 +250,13 @@
                     aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <div class="col-md-12 mt-3">
-                <a type="button" class="btn form-control section1-bg text-white" href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
+                <a type="button" class="btn form-control section1-bg text-white"
+                    href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
                     Trial</a>
             </div>
         </div>
     </div>
-    <div class="row col-md-12 bg-light p-3" id="section2">
+    <div class="row  bg-light p-3" id="section2">
         <div class="col-md-3 text-center">
             <div class="col-md-12">
                 <img class="img-fluid w-75" src="../../assets/harish-images/Cleaning-Product.png">
@@ -267,15 +283,16 @@
         </div>
 
     </div>
-    <div class="row col-md-12 section1-bg p-3" id="section3">
+    <div class="row  section1-bg p-3" id="section3">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <a type="button" class="btn form-control radius text-red bg-light" href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
+            <a type="button" class="btn form-control radius text-red bg-light"
+                href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
                 Trial</a>
         </div>
         <div class="col-md-4"></div>
     </div>
-    <div class="row col-md-12 bg-light p-3" id="section4">
+    <div class="row  bg-light p-3" id="section4">
         <p>Cognition UAE is an E-commerce website selling Office, School, Pantry and Cleaning
             supplies. Whether you are buying for your Household or for your Office in Dubai, you are
             at the right place. You can Buy any Quantity and Get Wholesale Price!</p>
@@ -287,7 +304,7 @@
                 Dubai, UAE</b>
         </p>
     </div>
-    <div class="row col-md-12 bg-white p-3" id="section5">
+    <div class="row  bg-white p-3" id="section5">
         <div class="col-md-12 text-center">
             <h1 class="text-red section5-header">Reasons to buy from us:</h1>
         </div>
@@ -328,16 +345,16 @@
             <h1>Committed to Great Customer service</h1>
         </div>
     </div>
-    <div class="row col-md-12 section1-bg p-3 text-center" id="section6">
-        <h1>Minimum savings of AED 3,000/per year. More purchases. More savings!</h1>
+    <div class="row  section1-bg p-3 text-center" id="section6">
+        <h1>Minimum savings of AED 3,000/per year. More purchases, More savings!</h1>
     </div>
-    <div class="row col-md-12 bg-light p-3" id="section7">
+    <div class="row  bg-light p-3" id="section7">
         <div class="col-md-3">
         </div>
         <div class="col-md-3 text-center">
             <img class="img-fluid w-50" src="../../assets/harish-images/Individual-Membership.png">
-            <table class="table mt-3 table-striped table-bordered" >
-                <tbody >
+            <table class="table mt-3 table-striped table-bordered">
+                <tbody>
                     <tr>
                         <td class="p-3 bg-secondary" style="color:#fff">INDIVIDUAL MEMBERSHIP</td>
                     </tr>
@@ -347,29 +364,41 @@
                             </span></td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Delivery</b> in Dubai only</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Delivery</b> in Dubai only</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;<b>Unlimited</b> purchase</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;<b>Unlimited</b> purchase</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Free</b> delivery</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Free</b> delivery</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;<b>Get</b> products in wholesale price</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;<b>Get</b> products in wholesale
+                            price</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Able to purchase 800+ products</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Able to purchase 800+ products
+                        </td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;Access to new products added
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;5% VAT applicable</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Access to new products added
                             to Pantry-Cleaning-Office-School
                             supplies!</td>
                     </tr>
                     <tr>
                         <td class="p-3">
                             <button type="button" class="btn  bg-danger text-white">SIGN UP
-                                </button>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -388,29 +417,41 @@
                             </span></td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Delivery</b> in Dubai only</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Delivery</b> in Dubai only</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;<b>Unlimited</b> purchase</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;<b>Unlimited</b> purchase</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Free</b> delivery</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;<b>Free</b> delivery</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;<b>Get</b> products in wholesale price</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;<b>Get</b> products in wholesale
+                            price</td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Able to purchase 800+ products</td>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Able to purchase 800+ products
+                        </td>
                     </tr>
                     <tr>
-                        <td class="p-3"><i class="fa fa-check btn-danger" style="background: #fff;color: #aa1b2b;"></i>&nbsp;Access to new products added
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #f8f9fa;color: #aa1b2b;"></i>&nbsp;5% VAT applicable</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><i class="fa fa-check btn-danger"
+                                style="background: #ebeced;color: #aa1b2b;"></i>&nbsp;Access to new products added
                             to Pantry-Cleaning-Office-School
                             supplies!</td>
                     </tr>
                     <tr>
                         <td class="p-3">
                             <button type="button" class="btn bg-danger text-white">SIGN UP
-                                </button>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -418,14 +459,22 @@
         </div>
         <div class="col-md-3"></div>
     </div>
-    <div class="row col-md-12 section1-bg p-3" id="section8">
-        <div class="col-md-7 text-center"><h1> Try before you sign up for a membership!</h1></div>
-        <div class="col-md-5"><a type="button" class="btn form-control radius text-red bg-light" href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
-            Trial</a></div>        
+    <div class="row  section1-bg p-3" id="section8">
+        <div class="col-md-7 text-center">
+            <h1> Try before you sign up for a membership!</h1>
+        </div>
+        <div class="col-md-5"><a type="button" class="btn form-control radius text-red bg-light"
+                href="https://cognitionuae.com/customer/account/create/">Start Your 21 Days Free
+                Trial</a></div>
     </div>
-    <div class="row col-md-12 section1-bg p-3 mt-3" id="section9">
+    <div class="row  section1-bg p-3 mt-3" id="section9">
         <div class="col-md-1"></div>
-        <div class="col-md-10">       <button type="button" class="btn form-control radius text-red bg-light" style="font-size: 25px;"><i style="color: #25D366;" class="fa fa-whatsapp"></i> 058 84 76763 or Mail us hello@cognitionuae.com to know more!</button>     
+        <div class="col-md-10"> <button type="button" class="btn form-control radius text-red bg-light"
+                style="font-size: 25px;"><i style="color: #25D366;"
+                class="fa fa-whatsapp"></i>
+                <a href="https://wa.me/+9710588476763?text=Hi" target="_blank"> 058 84 76763</a>
+                or <i style="color: #aa1b2b;"
+                class="fa fa-envelope-o"></i> <a href="mailto:hello@cognitionuae.com"> hello@cognitionuae.com</a> to know more!</button>
         </div>
         <div class="col-md-1"></div>
     </div>

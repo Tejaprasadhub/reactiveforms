@@ -18,9 +18,11 @@ export class SampleComponentComponent implements OnInit {
  title = 'sampleProject';
  myControl = new FormControl();
  options: string[] = ['One', 'Two', 'Three'];
+ options1: string[] = ['April', 'May', 'June'];
  toppings = new FormControl();
  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
  filteredOptions!: Observable<string[]>;
+ filteredOptions1!: Observable<string[]>;
 
  animal: any;
  /**
@@ -32,10 +34,14 @@ export class SampleComponentComponent implements OnInit {
 
  ngOnInit(): void {
    this.createForm();
-   this.filteredOptions = this.myControl.valueChanges.pipe(
+   this.filteredOptions = this.addUserForm.controls['userautocomplete'].valueChanges.pipe(
      startWith(''),
      map(value => this._filter(value))
    );
+   this.filteredOptions1 = this.addUserForm.controls['userautocomplete1'].valueChanges.pipe(
+    startWith(''),
+    map(value => this._filter1(value))
+  );
  }
 
  private _filter(value: string): string[] {
@@ -44,6 +50,12 @@ export class SampleComponentComponent implements OnInit {
    return this.options.filter(option => option.toLowerCase().includes(filterValue));
  }
 
+ private _filter1(value: string): string[] {
+  const filterValue = value.toLowerCase();
+
+  return this.options1.filter(option => option.toLowerCase().includes(filterValue));
+}
+
  //Create form method to constuct a form with validations
  createForm() {
    this.addUserForm = this.fb.group({
@@ -51,6 +63,7 @@ export class SampleComponentComponent implements OnInit {
      usertype: new FormControl('', { validators: [Validators.required] }),
      userdob: new FormControl('', { validators: [Validators.required] }),
      userautocomplete: new FormControl('', { validators: [Validators.required] }),
+     userautocomplete1: new FormControl('', { validators: [Validators.required] }),
     //  userqualification: new FormControl([], { validators: [Validators.required] })
    });
  }
@@ -74,6 +87,7 @@ export class SampleComponentComponent implements OnInit {
      'usertype': "ADMN",
      'userdob':new Date("07/08/2018"),
      'userautocomplete': "Two",
+     'userautocomplete1': "April",
     //  'userqualification': ["Mushroom","Onion"]
    })
  }
