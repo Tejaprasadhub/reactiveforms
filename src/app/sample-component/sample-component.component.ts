@@ -3,7 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, startWith } from 'rxjs/operators';
+import { AppConstants } from '../app-constants';
 import { SampleModalComponent } from '../sample-modal/sample-modal.component';
+
 @Component({
   selector: 'app-sample-component',
   templateUrl: './sample-component.component.html',
@@ -58,6 +60,7 @@ export class SampleComponentComponent implements OnInit {
 
  //Create form method to constuct a form with validations
  createForm() {
+   console.log(AppConstants.Api.NYC);
    this.addUserForm = this.fb.group({
      username: new FormControl('', { validators: [Validators.required] }),
      usertype: new FormControl('', { validators: [Validators.required] }),

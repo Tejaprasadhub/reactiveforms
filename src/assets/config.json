@@ -1,0 +1,9 @@
+{
+    "api":{
+        "NYC":"https://localhost:44386/api/"   
+    },
+    "Messages":{
+        "successMessage":"Your changes have been successfully saved",
+        "errorMessage":"The login information you entered does not match our records. Please try again."
+    }        
+} 
